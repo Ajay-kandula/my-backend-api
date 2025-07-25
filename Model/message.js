@@ -1,18 +1,18 @@
-const {DataTypes} =require('sequelize')
-const sequelize=require('../Config/db')
-const Message=sequelize.define('Message',{
+const mongoose=require('mongoose');
+
+const Message=new mongoose.Schema({
     name:{
-        type:DataTypes.STRING,
+        type:String,
         allowNull:false,
     },
     email:{
-        type:DataTypes.STRING,
+        type:String,
         allowNull:false
     },
     message:{
-        type:DataTypes.STRING,
+        type:String,
         allowNull:false
 
     }
 })
-module.exports=Message;
+module.exports=mongoose.model('Message',Message)
